@@ -53,6 +53,11 @@ const LoginLanding = () => {
           </div>
 
           {/** Footer */}
+          <div>
+            <p className="mt-12 text-center md:text-center text-sm text-slate-600">
+              © {new Date().getFullYear()} Shuamila.All rights reserved.{" "}
+            </p>
+          </div>
         </div>
       </div>
     </div>
