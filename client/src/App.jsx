@@ -9,12 +9,35 @@ import Leave from "./pages/Leave";
 import Attendance from "./pages/Attendance";
 import Employees from "./pages/Employees";
 import PrintPayslips from "./pages/PrintPayslips";
+import LoginForm from "./components/LoginForm";
 const App = () => {
   return (
     <>
       <Toaster />
       <Routes>
         <Route path="/login" element={<LoginLanding />} />
+
+        <Route
+          path="/login/admin"
+          element={
+            <LoginForm
+              role="admin"
+              title="Admin Portal"
+              subtitle="Sign in to access the admin dashboard and insights."
+            />
+          }
+        />
+        <Route
+          path="/login/employee"
+          element={
+            <LoginForm
+              role="employee"
+              title="Employee Portal"
+              subtitle="Sign in to stay updated with your work schedule."
+            />
+          }
+        />
+
         <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/employess" element={<Employees />} />
