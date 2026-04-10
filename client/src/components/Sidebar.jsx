@@ -12,6 +12,7 @@ import {
   FileTextIcon,
   DollarSignIcon,
   SettingsIcon,
+  LogOutIcon,
 } from "lucide-react";
 
 const Sidebar = () => {
@@ -28,7 +29,7 @@ const Sidebar = () => {
     setMobileOpen(false);
   }, [pathname]);
 
-  const role = "EMPLOYEE";
+  const role = "" || "EMPLOYEE";
 
   const navItems = [
     { name: "Dashboard", href: "/dashboard", icon: LayoutGridIcon },
@@ -40,6 +41,9 @@ const Sidebar = () => {
     { name: "Settings", href: "/settings", icon: SettingsIcon },
   ];
 
+  const handleLogout = () => {
+    window.location.href = "/login";
+  };
   const sidebarContent = (
     <>
       {/* Brand Header */}
@@ -102,7 +106,7 @@ const Sidebar = () => {
             <Link
               to={item.href}
               key={item.name}
-              className="flex items-center gap-3 p-2 rounded-lg relative group"
+              className={`flex items-center gap-3 px-3 py-2 rounded-md relative group text-[13px] font-medium transition-all duration-150 ${isActive ? "bg-indigo-500/12 text-indigo-300" : "text-slate-300 hover:text-white hover: bg-white/4"}`}
             >
               {isActive && (
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 rounded-r-full bg-indigo-500" />
@@ -118,7 +122,17 @@ const Sidebar = () => {
           );
         })}
       </div>
+
       {/* Logout */}
+      <div className="p-3 border-t border-white/6">
+        <button
+          onClick={handleLogout}
+          className="flex items-center gap-3 w-fulll px-3 py-2.5 rounded-md text-[13px] font-medium text-slate-400 hover:text-rose-400 hover:bg-rose-500/8 transition-all"
+        >
+          <LogOutIcon className="w-4.25 h-4.25" />
+          <span>Log out</span>
+        </button>
+      </div>
     </>
   );
 
