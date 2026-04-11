@@ -38,7 +38,7 @@ const Sidebar = () => {
       : { name: "Attendance", href: "/attendance", icon: CalendarIcon },
     { name: "Leave", href: "/leave", icon: FileTextIcon },
     { name: "Payslips", href: "/payslips", icon: DollarSignIcon },
-    // { name: "Settings", href: "/settings", icon: SettingsIcon },
+    { name: "Settings", href: "/settings", icon: SettingsIcon },
   ];
 
   const handleLogout = () => {
