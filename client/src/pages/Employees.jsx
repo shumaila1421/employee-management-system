@@ -82,7 +82,7 @@ const Employees = () => {
           {filtered.length === 0 ? (
             <p className="col-span-full text-center py-16 text-slate-400 bg-white rounded-2xl border border-dashed border-slate-200">
               {" "}
-              No employees
+              No employees found
             </p>
           ) : (
             filtered.map((emp) => (
