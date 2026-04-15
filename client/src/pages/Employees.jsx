@@ -80,7 +80,7 @@ const Employees = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
           {filtered.length === 0 ? (
-            <p className="col-span-full text-center py-16 text-slate-400 bg-white rounded-2xl border border-dashed border-slate-200">
+            <p className="col-span-full text-center py-12 text-slate-400 bg-white rounded-2xl border border-dashed border-slate-200">
               {" "}
               No employees found
             </p>
@@ -99,9 +99,10 @@ const Employees = () => {
 
       {/* Create Employee Modal */}
       {showCreateModal && (
-        <div className="fixed bg-black/40 backdrop-blur-sm inset-0 z-50 flex items-start justify-center p-4 overflow-y-auto" onClick={() => setShowCreateModal(false)}>
-
-        </div>
+        <div
+          className="fixed bg-black/40 backdrop-blur-sm inset-0 z-50 flex items-start justify-center p-4 overflow-y-auto"
+          onClick={() => setShowCreateModal(false)}
+        ></div>
       )}
       {/* Edit Employee Modal */}
     </div>
