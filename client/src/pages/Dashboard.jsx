@@ -15,7 +15,7 @@ const Dashboard = () => {
     setData(dummyAdminDashboardData);
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 500);
   }, []);
 
   if (loading) return <Loading />;
