@@ -15,17 +15,13 @@ const Dashboard = () => {
     setData(dummyAdminDashboardData);
     setTimeout(() => {
       setLoading(false);
-    }, 50);
+    }, 1000);
   }, []);
 
   if (loading) return <Loading />;
 
   if (!data) {
-    return (
-      <p className="text-center text-slate-500 py-12">
-        Failed to load dashboard
-      </p>
-    );
+    return <p className="text-center text-slate-500 py-12">Failed to load</p>;
   }
 
   if (data.role === "ADMIN") {
