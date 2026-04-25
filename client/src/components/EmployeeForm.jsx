@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DEPARTMENTS } from "../assets/assets";
+import { Loader2Icon } from "lucide-react";
 
 const EmployeeForm = ({ initialData, onSucess, onCancel }) => {
   const navigate = useNavigate();
@@ -166,7 +167,7 @@ const EmployeeForm = ({ initialData, onSucess, onCancel }) => {
               defaultValue={initialData?.email}
             />
           </div>
-          {isEditMode && (
+          {!isEditMode && (
             <div>
               <label className="block mb-2">Temporary Password</label>
               <input type="password" name="password" required />
@@ -178,7 +179,6 @@ const EmployeeForm = ({ initialData, onSucess, onCancel }) => {
               <input
                 type="password"
                 name="password"
-                required
                 placeholder="Leave blank to keep current password"
               />
             </div>
@@ -188,12 +188,33 @@ const EmployeeForm = ({ initialData, onSucess, onCancel }) => {
             <select
               name="role"
               defaultValue={initialData?.user?.role || "EMPLOYEE"}
-            ></select>
+            >
+              <option value="EMPLOYEE">Employee</option>
+              <option value="ADMIN">Admin</option>
+            </select>
           </div>
         </div>
       </div>
 
       {/* Buttons */}
+
+      <div className="flex flex-col-reverse sm:flex-row justify-end gap-3 pt-2">
+        <button
+          type="button"
+          className="btn-secondary"
+          onClick={() => (onCancel ? onCancel() : navigate(-1))}
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          disabled={loading}
+          className="btn-primary flex items-center justify-center"
+        >
+          {loading && <Loader2Icon className="w-4 h-4 mr-2 animate-spin" />}
+          {isEditMode ? "Update Employee" : "Create Employee"}
+        </button>
+      </div>
     </form>
   );
 };
