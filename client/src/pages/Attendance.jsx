@@ -10,7 +10,7 @@ const Attendance = () => {
     setHistory(dummyAttendanceData);
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 100);
   }, []);
 
   useEffect(() => {
