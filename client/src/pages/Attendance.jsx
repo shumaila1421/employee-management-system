@@ -16,7 +16,7 @@ const Attendance = () => {
   useEffect(() => {
     fetchData();
   }, [fetchData]);
-  return <div>Attandance</div>;
+  return <div>Attandae</div>;
 };
 
 export default Attendance;
