@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { dummyAttendanceData } from "../assets/assets";
 import CheckinButton from "../components/attendance/CheckinButton";
 import AttendanceStats from "../components/attendance/AttendanceStats";
+import AttendanceHistory from "../components/attendance/AttendanceHistory";
 
 const Attendance = () => {
   const [history, setHistory] = useState([]);
