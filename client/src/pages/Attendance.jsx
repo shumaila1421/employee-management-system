@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { dummyAttendanceData } from "../assets/assets";
 import CheckinButton from "../components/attendance/CheckinButton";
+import AttendanceStats from "../components/attendance/AttendanceStats";
 
 const Attendance = () => {
   const [history, setHistory] = useState([]);
@@ -47,6 +48,9 @@ const Attendance = () => {
           <CheckinButton todayRecord={todayRecord} onAction={fetchData} />
         </div>
       )}
+
+      <AttendanceStats history={history} />
+      <AttendanceHistory history={history} />
     </div>
   );
 };
