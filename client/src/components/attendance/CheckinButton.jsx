@@ -15,7 +15,7 @@ const CheckinButton = ({ todayRecord, onAction }) => {
   if (todayRecord?.checkOut) {
     return (
       <div className="flex flex-xol items-center justify-center p-8 bg-slate-50 rounded-2xl border border-slate-200">
-        <h3 className="text-lg font-bold text-slate-900">Work Day </h3>
+        <h3 className="text-lg font-bold text-slate-900">Work Day Completed</h3>
         <p className="text-slate-500 text-sm mt-1">
           Great job! See you tomorrow
         </p>
