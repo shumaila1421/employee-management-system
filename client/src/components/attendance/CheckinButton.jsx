@@ -25,7 +25,7 @@ const CheckinButton = ({ todayRecord, onAction }) => {
 
   const isCheckedIn = !!todayRecord?.isCheckedIn;
   return (
-    <div className="absolute bottom-4 right-4 flex flex-xol z-1">
+    <div className="absolute bottom-4 right-4 flex flex-xol ">
       <button
         onClick={handleAttendance}
         disabled={loading}
