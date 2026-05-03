@@ -1,5 +1,6 @@
 import { Check, Loader2, X } from "lucide-react";
 import React, { useState } from "react";
+import { format } from "date-fns";
 
 const LeaveHistory = ({ leaves, isAdmin, onUpdate }) => {
   const [processing, setProcessing] = useState(null);

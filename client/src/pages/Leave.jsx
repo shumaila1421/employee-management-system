@@ -7,6 +7,8 @@ import {
   ThermometerIcon,
   UmbrellaIcon,
 } from "lucide-react";
+import LeaveHistory from "../components/leave/LeaveHistory";
+import ApplyLeaveModal from "../components/leave/ApplyLeaveModal";
 
 const Leave = () => {
   const [leaves, setLeaves] = useState([]);
@@ -43,8 +45,8 @@ const Leave = () => {
     <div className="animate-fade-in">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
         <div>
-          <h1>Leave Management</h1>
-          <p>
+          <h1 className="page-title">Leave Management</h1>
+          <p className="page-subtitle">
             {isAdmin
               ? "Manage leave application"
               : "Your leave history and requests"}
@@ -83,6 +85,12 @@ const Leave = () => {
           ))}
         </div>
       )}
+      <LeaveHistory leaves={leaves} isAdmin={isAdmin} onUpdate={fetchLeaves} />
+      <ApplyLeaveModal
+        open={showModal}
+        onClose={() => setShowModal(false)}
+        onSuccess={fetchLeaves}
+      />
     </div>
   );
 };
