@@ -60,7 +60,6 @@ const Leave = () => {
             <PlusIcon className="w-4 h-4" /> Apply for Leave
           </button>
         )}
-        console.log("hello")
       </div>
       {!isAdmin && (
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 mb-8">
