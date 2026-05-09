@@ -79,7 +79,6 @@ const Leave = () => {
                   <span className="text-sm font-normal text-slate-400 ">
                     taken
                   </span>
-                  <p>Leave</p>
                 </p>
               </div>
             </div>
