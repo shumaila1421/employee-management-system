@@ -57,7 +57,7 @@ const Leave = () => {
             onClick={() => setShowModal(true)}
             className="btn-primary flex items-center gap-2 w-full sm:w-auto justify-center"
           >
-            <PlusIcon className="w-4 h-4" /> Apply for
+            <PlusIcon className="w-4 h-4" /> Apply for leave
           </button>
         )}
       </div>
