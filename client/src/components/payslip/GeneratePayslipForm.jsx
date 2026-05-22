@@ -1,4 +1,4 @@
-import { Plus, PlusIcon, X } from "lucide-react";
+import { Loader2, Plus, PlusIcon, X } from "lucide-react";
 import React, { useState } from "react";
 
 const GeneratePayslipForm = ({ employees, onSuccess }) => {
@@ -71,6 +71,54 @@ const GeneratePayslipForm = ({ employees, onSuccess }) => {
                 defaultValue={new Date().getFullYear}
               />
             </div>
+
+            <div>
+              <label className="block text-sm font-medium text-slate-700 mb-2">
+                Basic Salary
+              </label>
+              <input
+                type="number"
+                name="basicSalary"
+                required
+                placeholder="5000"
+              />
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Allowances
+                </label>
+                <input type="number" name="allowances" defaultValue="0" />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Deductions
+                </label>
+                <input type="number" name="deductions" defaultValue="0" />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-end gap-3 pt-2">
+            <button
+              className="btn-secondary"
+              type="button"
+              onClick={() => setIsOpen(false)}
+            >
+              Cancle
+            </button>
+
+            <button
+              disabled={loading}
+              className="btn-primary flex items-center"
+              type="submit"
+              onClick={() => setIsOpen(false)}
+            >
+              {loading && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
+              Generate
+            </button>
           </div>
         </form>
       </div>
