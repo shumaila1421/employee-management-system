@@ -1,4 +1,4 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 import { DEPARTMENTS } from "../constants/departments.js";
 
 const employeeSchema = new mongoose.Schema(
@@ -26,10 +26,6 @@ const employeeSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    phone: {
-      type: String,
-      required: true,
-    },
     position: {
       type: String,
       required: true,
@@ -46,7 +42,7 @@ const employeeSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    employementStatus: {
+    employmentStatus: {
       type: String,
       default: "ACTIVE",
       enum: ["ACTIVE", "INACTIVE"],
@@ -56,8 +52,8 @@ const employeeSchema = new mongoose.Schema(
       required: true,
     },
     isDeleted: {
-      type: String,
-      default: "",
+      type: Boolean,
+      default: false,
     },
     bio: {
       type: String,
