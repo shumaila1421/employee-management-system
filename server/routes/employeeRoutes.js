@@ -4,11 +4,14 @@ import {
   deleteEmployees,
   getEmployees,
   updateEmployees,
-} from "../controllers/employeeController";
+} from "../controllers/employeeController.js";
+import { protect, protectAdmin } from "../middleware/auth.js";
 
-const employeeRouter = Router();
+const employeesRouter = Router();
 
-employeesRouter.get("/", getEmployees);
-employeesRouter.get("/", createEmployees);
-employeesRouter.get("/:id", updateEmployees);
-employeesRouter.get("/:id", deleteEmployees);
+employeesRouter.get("/", protect, protectAdmin, getEmployees);
+employeesRouter.post("/", protect, protectAdmin, createEmployees);
+employeesRouter.put("/:id", protect, protectAdmin, updateEmployees);
+employeesRouter.delete("/:id", protect, protectAdmin, deleteEmployees);
+
+export default employeesRouter;
