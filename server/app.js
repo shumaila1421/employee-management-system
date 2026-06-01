@@ -6,6 +6,7 @@ import { connect } from "mongoose";
 import connectDB from "./config/db.js";
 import authRouter from "./routes/authRoutes.js";
 import employeesRouter from "./routes/employeeRoutes.js";
+import profileRouter from "./routes/profileRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,6 +20,7 @@ app.use(multer().none());
 app.get("/", (req, res) => res.send("Server is running"));
 app.use("/api/auth", authRouter);
 app.use("/api/employees", employeesRouter);
+app.use("/api/profile", profileRouter);
 
 await connectDB();
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
